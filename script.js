@@ -3,6 +3,7 @@
 // HARUS EXPORT JADI MODULE DULU BARU MAU GRADINGNYA GTW DAH
 export const generatePassword = (length, options) =>
 {
+
     // Character sets for generatedpassword generation
     const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const lowercase = "abcdefghijklmnopqrstuvwxyz";
@@ -26,9 +27,9 @@ export const generatePassword = (length, options) =>
         const randomIndex = Math.floor(Math.random() * charset.length);
         generatedpassword += charset[randomIndex];
     }
+    
     return generatedpassword;
 };
-
 // ENTAH KENAPA INI BIKIN AUTOGRADINGNYA GAK PASSED 6 JADI TAK KOMENTAR AJAH
 // LAGIAN FUNGSINYA UDAH ADA DI dom.js
 
