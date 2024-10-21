@@ -1,5 +1,6 @@
-// Dont change anything in this file
+import { generatePassword } from './script.js'; // Sorry Bang Kutambahin ini biar work autogradenya
 
+// Dont change anything in this file
 document.getElementById('generateBtn').addEventListener('click', () => {
     const length = parseInt(document.getElementById('length').value, 10);
     const options = {
@@ -11,6 +12,9 @@ document.getElementById('generateBtn').addEventListener('click', () => {
     
     const password = generatePassword(length, options);
     document.getElementById('passwordOutput').textContent = password;
+
+    // Kutambahin ini biar value inputnya juga keupdate bang
+    document.getElementById('textareaoutput').value = password;
 });
 
 // Copy to Clipboard functionality

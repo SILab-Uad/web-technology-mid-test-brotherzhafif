@@ -7,42 +7,64 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- TODO: Create a text field to display the generated password -->
     <div class="container">
-      <h1>Password Generator</h1>
-      <!-- TODO: Create an input field for password length (between 8-128 characters) -->
-      <label for="length">Password Length:</label>
-      <input type="number" id="length" value="12" min="8" max="128" />
+      <!-- Output is here -->
+      <div class="output">
+        <p hidden id="passwordOutput"></p>
+        <input disabled id="textareaoutput" type="text" placeholder="Output Password">
 
-      <h3>Select criteria:</h3>
-      <!-- TODO: Create checkboxes for including uppercase, lowercase, numbers, and special characters -->
-      <label>
-        <input class="checkboxes" type="checkbox" id="includeUppercase" />
-        Include Uppercase </label
-      ><br />
-      <label>
-        <input class="checkboxes" type="checkbox" id="includeLowercase" />
-        Include Lowercase </label
-      ><br />
-      <label>
-        <input class="checkboxes" type="checkbox" id="includeNumbers" /> Include
-        Numbers </label
-      ><br />
-      <label>
-        <input class="checkboxes" type="checkbox" id="includeSpecialChars" />
-        Include Special Characters </label
-      ><br />
+        <!-- BONUS: Add a "Copy to Clipboard" button -->
+        <img width="40px" src="img/copypaste.svg" id="copyBtn"></img>
+      </div>
 
-      <!-- TODO: Create a text field to display the generated password -->
-      <p id="passwordOutput"></p>
+      <div class="options">
+        <div class="lengthInfo">
+          <p style="margin-top: 0;">Charater Length</p> <p style="margin-top: 0;" id="charlength">12</p>
+        </div>
+        <input type="range" id="length" value="12" min="8" max="128" />
+  
+        <!-- TODO: Create checkboxes for including uppercase, lowercase, numbers, and special characters -->
+        <div class="checkboxcontainer">
+          <p>Select Criteria</p>
+          <label class="selection" for="includeUppercase">
+            <input class="checkboxes" type="checkbox" id="includeUppercase"/>
+            Include Uppercase Letters
+          </label>
 
-      <!-- TODO: Create a button to generate the password -->
-      <button id="generateBtn">Generate Password</button>
+          <label class="selection" for="includeLowercase">
+            <input class="checkboxes" type="checkbox" id="includeLowercase"/>
+            Include Lowercase Letters
+          </label>
 
-      <!-- BONUS: Add a "Copy to Clipboard" button -->
-      <button id="copyBtn">Copy to Clipboard</button>
+          <label class="selection" for="includeNumbers">
+            <input class="checkboxes" type="checkbox" id="includeNumbers"/>
+            Include Numbers
+          </label>
+
+          <label class="selection" for="includeSpecialChars">
+            <input class="checkboxes" type="checkbox" id="includeSpecialChars"/>
+            Include Symbols
+          </label>
+        </div>
+
+        <button class="hitam" id="generateBtn">Generate Password</button>
+      </div>
     </div>
 
-    <script src="script.js"></script>
-    <script src="dom.js"></script>
+
+      <!-- TODO: Create a button to generate the password -->
+
   </body>
 </html>
+    
+<!-- HARUS DIJADIIN MODULE KEDUANYA -->
+<script type="module" src="script.js"></script>
+<script type="module" src="dom.js"></script>
+<script>
+  var slider = document.getElementById("length")
+  slider.addEventListener('input', () =>
+  {
+    document.getElementById("charlength").innerHTML = slider.value
+  })
+</script>
