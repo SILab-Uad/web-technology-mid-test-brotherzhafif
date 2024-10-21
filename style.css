@@ -1,4 +1,5 @@
-body {
+body 
+{
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -7,7 +8,8 @@ body {
     background-color: #e0e7ff; /* Background color */
 }
 
-.container {
+.container 
+{
     text-align: center;
     padding: 30px;
     background-color: #ffffff; /* Background color for container */
@@ -18,10 +20,18 @@ body {
 }
 
 /* TODO: Add styles for labels, inputs, buttons, and output text */
-h1 {
+h1 
+{
     font-size: 2.2em;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
     color: #4a4a4a; /* Header color */
+}
+label
+{
+    font-size: 1.3em;
+    font-weight: 200;
+    text-align: right;
 }
 
 /* Add more styles here as needed */
+
